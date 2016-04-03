@@ -32,14 +32,16 @@ class HSort:
         return self._recursive_heapify(array, 0)
 
     def _recursive_heapify(self, array, index):
-        if index >= len(array): return array
+        if index >= len(array):
+            return array
 
         self._sift_up(array, index)
 
         return self._recursive_heapify(array, index + 1)
 
     def _sift_up(self, array, i):
-        if i <= 0: return array
+        if i <= 0:
+            return array
 
         p = self._predecessor_index(i)
         if array[p] < array[i]:
@@ -58,7 +60,8 @@ class HSort:
         return self._build_list(array, index-1)
 
     def _sift_down(self, array, index, end_index):
-        if self._left_successor_index(index) >= end_index: return array
+        if self._left_successor_index(index) >= end_index:
+            return array
 
         max_index = self._max_index(array, index, end_index)
 
@@ -73,7 +76,8 @@ class HSort:
         right_index = self._right_successor_index(index)
 
         indexes = [index, left_index]
-        if right_index <= end_index: indexes.append(right_index)
+        if right_index <= end_index:
+            indexes.append(right_index)
 
         def arg_max(a, b): return a if array[a] >= array[b] else b
 

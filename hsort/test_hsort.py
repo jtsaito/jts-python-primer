@@ -57,7 +57,7 @@ class TestHSort(unittest.TestCase):
     def test_sort_n_random(self):
         """sorts 16 random lists of size 33"""
         for random_seed in range(16):
-            rand_list, sorted_list = _random_list(33, random_seed)
+            rand_list, sorted_list = TestHSort._random_list(33, random_seed)
             self.assertEqual(self.hsort.sort(list(rand_list)), sorted_list)
 
 if __name__ == '__main__':

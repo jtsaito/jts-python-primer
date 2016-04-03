@@ -48,11 +48,11 @@ class TestHSort(unittest.TestCase):
 
     def test_sort_four_sorted(self):
         """Sort sorted list with four elements"""
-        self.assertEqual(self.hsort.sort([1,2,3,4]), [1,2,3,4])
+        self.assertEqual(self.hsort.sort([1, 2, 3, 4]), [1, 2, 3, 4])
 
     def test_sort_four_reverse(self):
         """Sort reversed list with four elements"""
-        self.assertEqual(self.hsort.sort([4,3,2,1]), [1,2,3,4])
+        self.assertEqual(self.hsort.sort([4, 3, 2, 1]), [1, 2, 3, 4])
 
     def test_sort_n_random(self):
         """sorts 16 random lists of size 33"""

@@ -1,4 +1,7 @@
+"""Heap sort. Contains the HSort class for sorting lists."""
+
 import functools
+
 
 class HSort:
     """Heap sort."""

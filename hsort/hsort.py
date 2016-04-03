@@ -10,6 +10,21 @@ class HSort:
         length = len(array) - 1
         return self._build_list(array, length)
 
+    @classmethod
+    def _predecessor_index(cls, index):
+        if index <= 0:
+            return 0
+        else:
+            return (index - 1) // 2
+
+    @classmethod
+    def _left_successor_index(cls, index):
+        return (2 * index) + 1
+
+    @classmethod
+    def _right_successor_index(cls, index):
+        return (2 * index) + 2
+
     def _build_heap(self, array):
         return self._recursive_heapify(array, 0)
 
@@ -29,17 +44,9 @@ class HSort:
 
         self._sift_up(array, i - 1)
 
-    def _predecessor_index(self, index):
-        return 0 if index <= 0 else (index - 1) // 2
-
-    def _left_successor_index(self, index):
-        return (2 * index) + 1
-
-    def _right_successor_index(self, index):
-        return (2 * index) + 2
-
     def _build_list(self, array, index):
-        if index < 1: return array
+        if index < 1:
+            return array
 
         if array[0] > array[index]:
             array[0], array[index] = array[index], array[0]

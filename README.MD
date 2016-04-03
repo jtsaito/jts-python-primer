@@ -1,1 +1,1 @@
-Just some warm up gettings started with Python.
+My first Python.

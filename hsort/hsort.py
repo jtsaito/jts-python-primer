@@ -43,9 +43,9 @@ class HSort:
         if i <= 0:
             return array
 
-        p = self._predecessor_index(i)
-        if array[p] < array[i]:
-            array[i], array[p] = array[p], array[i]
+        j = self._predecessor_index(i)
+        if array[j] < array[i]:
+            array[i], array[j] = array[j], array[i]
 
         self._sift_up(array, i - 1)
 

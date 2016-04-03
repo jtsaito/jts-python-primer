@@ -2,7 +2,8 @@ import random
 import unittest
 from hsort import HSort
 
-class TestHeapfiy(unittest.TestCase):
+class TestHSort(unittest.TestCase):
+    "Test HSort class"
 
     def setUp(self):
         self.hsort = HSort()

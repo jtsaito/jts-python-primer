@@ -1,15 +1,17 @@
 import functools
 
 class HSort:
+    """Heap sort."""
 
     def sort(self, list):
-      self._build_heap(list)
+        """Sort a list"""
+        self._build_heap(list)
 
-      length = len(list) - 1
-      return self._build_list(list, length)
+        length = len(list) - 1
+        return self._build_list(list, length)
 
     def _build_heap(self, list):
-       return self._recursive_heapify(list, 0)
+        return self._recursive_heapify(list, 0)
 
     def _recursive_heapify(self, list, index):
         if index >= len(list): return list
@@ -63,6 +65,6 @@ class HSort:
         indexes = [index, left_index]
         if right_index <= end_index: indexes.append(right_index)
 
-        arg_max = lambda a, b: a if list[a] >= list[b] else b
+        def arg_max(a, b): return a if list[a] >= list[b] else b
 
         return functools.reduce(arg_max, indexes)

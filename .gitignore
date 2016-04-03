@@ -7,3 +7,6 @@ __pycache__/
 
 # cache
 hsort/.cache/
+
+# linter related
+.ropeproject/

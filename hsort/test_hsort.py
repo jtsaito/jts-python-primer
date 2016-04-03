@@ -1,6 +1,9 @@
+"""Unittests for HSort"""
+
 import random
 import unittest
 from hsort import HSort
+
 
 class TestHSort(unittest.TestCase):
     "Test HSort class"
@@ -12,7 +15,7 @@ class TestHSort(unittest.TestCase):
     def _random_list(cls, size, seed):
         random.seed(seed)
 
-        random_list = [ int(random.random()*size) for i in range(size) ]
+        random_list = [int(random.random()*size) for i in range(size)]
         sorted_list = list(random_list)
 
         sorted_list.sort()

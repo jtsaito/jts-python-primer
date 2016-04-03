@@ -79,6 +79,10 @@ class HSort:
         if right_index <= end_index:
             indexes.append(right_index)
 
-        def arg_max(a, b): return a if array[a] >= array[b] else b
+        def _arg_max(index, other_index):
+            if array[index] >= array[other_index]:
+                return index
+            else:
+                return other_index
 
-        return functools.reduce(arg_max, indexes)
+        return functools.reduce(_arg_max, indexes)

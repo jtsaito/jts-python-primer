@@ -7,7 +7,8 @@ class TestHeapfiy(unittest.TestCase):
     def setUp(self):
         self.hsort = HSort()
 
-    def random_list(self, size, seed):
+    @classmethod
+    def _random_list(cls, size, seed):
         random.seed(seed)
 
         random_list = [ int(random.random()*size) for i in range(size) ]
@@ -46,7 +47,7 @@ class TestHeapfiy(unittest.TestCase):
 
     def test_sort_n_random(self):
         for random_seed in range(16):
-            rand_list, sorted_list = self.random_list(33, random_seed)
+            rand_list, sorted_list = _random_list(33, random_seed)
             self.assertEqual(self.hsort.sort(list(rand_list)), sorted_list)
 
 if __name__ == '__main__':
